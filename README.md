@@ -1,2 +1,2 @@
 # JavaYahtzee
-A small Yahtzee project I built using Java in Eclipse.
+A small Yahtzee project I built using Java in Eclipse in 2018.
