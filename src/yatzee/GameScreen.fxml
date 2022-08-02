@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<FlowPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yatzee.GameScreenController">
+   <children>
+      <Accordion>
+        <panes>
+          <TitledPane animated="false" text="Game View">
+               <content>
+                  <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0">
+                     <bottom>
+                        <BorderPane prefHeight="47.0" prefWidth="390.0" BorderPane.alignment="CENTER">
+                           <center>
+                              <HBox prefHeight="101.0" prefWidth="390.0" spacing="63.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <CheckBox fx:id="dOne" mnemonicParsing="false" text="6" />
+                                    <CheckBox fx:id="dTwo" mnemonicParsing="false" text="6" />
+                                    <CheckBox fx:id="dThree" mnemonicParsing="false" text="6" />
+                                    <CheckBox fx:id="dFour" mnemonicParsing="false" text="6" />
+                                    <CheckBox fx:id="dFive" mnemonicParsing="false" text="6" />
+                                 </children>
+                              </HBox>
+                           </center>
+                           <bottom>
+                              <StackPane prefHeight="49.0" prefWidth="392.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <VBox prefHeight="59.0" prefWidth="392.0">
+                                       <children>
+                                          <HBox prefHeight="24.0" prefWidth="392.0">
+                                             <children>
+                                                <Button fx:id="bRoll" mnemonicParsing="false" onAction="#handleRollButtonPress" prefHeight="25.0" prefWidth="200.0" text="Roll" />
+                                                <Button fx:id="bPlace" mnemonicParsing="false" onAction="#handlePlaceButtonPress" prefHeight="25.0" prefWidth="200.0" text="Place" />
+                                             </children>
+                                          </HBox>
+                                          <Button fx:id="bReset" mnemonicParsing="false" onAction="#handleResetButtonPress" prefHeight="25.0" prefWidth="400.0" text="Reset" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                           </bottom>
+                        </BorderPane>
+                     </bottom>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <top>
+                        <Label fx:id="lTotalScore" text="0" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                     </top>
+                     <right>
+                        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox prefHeight="477.0" prefWidth="139.0" spacing="41.0">
+                                 <children>
+                                    <RadioButton fx:id="cbThreeoaKind" mnemonicParsing="false" text="3-of-a-Kind">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="scores" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="cbFouroaKind" mnemonicParsing="false" text="4-of-a-Kind" toggleGroup="$scores" />
+                                    <RadioButton fx:id="cbFullHouse" mnemonicParsing="false" text="Full House" toggleGroup="$scores" />
+                                    <RadioButton fx:id="cbSmallStraight" mnemonicParsing="false" text="Small Straight" toggleGroup="$scores" />
+                                    <RadioButton fx:id="cbLargeStraight" mnemonicParsing="false" text="Large Straight" toggleGroup="$scores" />
+                                    <RadioButton fx:id="cbYatzee" mnemonicParsing="false" text="YAHTZEE" toggleGroup="$scores" />
+                                    <RadioButton fx:id="cbChance" mnemonicParsing="false" text="Chance" toggleGroup="$scores" />
+                                    <Separator prefWidth="200.0" />
+                                    <Label text="Total Right Score:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="41.0">
+                                 <children>
+                                    <Label fx:id="lThreeoaKind" text="0" />
+                                    <Label fx:id="lFouroaKind" text="0" />
+                                    <Label fx:id="lFullHouse" text="0" />
+                                    <Label fx:id="lSmallStraight" text="0" />
+                                    <Label fx:id="lLargeStraight" text="0" />
+                                    <Label fx:id="lYatzee" text="0" />
+                                    <Label fx:id="lChance" text="0" />
+                                    <Separator prefWidth="200.0" />
+                                    <Label fx:id="lRightScore" text="0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </right>
+                     <left>
+                        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox prefHeight="516.0" prefWidth="110.0" spacing="41.0">
+                                 <children>
+                                    <RadioButton fx:id="cbOnes" mnemonicParsing="false" text="Sum of Ones" toggleGroup="$scores" />
+                                    <RadioButton fx:id="cbTwos" mnemonicParsing="false" text="Sum of Twos" toggleGroup="$scores" />
+                                    <RadioButton fx:id="cbThrees" mnemonicParsing="false" text="Sum of Threes" toggleGroup="$scores" />
+                                    <RadioButton fx:id="cbFours" mnemonicParsing="false" text="Sum of Fours" toggleGroup="$scores" />
+                                    <RadioButton fx:id="cbFives" mnemonicParsing="false" text="Sum of Fives" toggleGroup="$scores" />
+                                    <RadioButton fx:id="cbSixes" mnemonicParsing="false" text="Sum of Sixes" toggleGroup="$scores" />
+                                    <Label text="35 Bonus:" />
+                                    <Separator prefWidth="200.0" />
+                                    <Label text="Total Left Score:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="41.0">
+                                 <children>
+                                    <Label fx:id="lOnes" text="0" />
+                                    <Label fx:id="lTwos" text="0" />
+                                    <Label fx:id="lThrees" text="0" />
+                                    <Label fx:id="lFours" text="0" />
+                                    <Label fx:id="lFives" text="0" />
+                                    <Label fx:id="lSixes" text="0" />
+                                    <Label fx:id="lBonus" text="No" />
+                                    <Separator prefWidth="200.0" />
+                                    <Label fx:id="lLeftScore" text="0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </left>
+                     <center>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </content>
+          </TitledPane>
+          <TitledPane animated="false" text="High Scores">
+               <content>
+                  <HBox prefHeight="600.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="200.0" spacing="2.0">
+                           <children>
+                              <Label alignment="TOP_CENTER" text="1st">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="2nd">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="3rd">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="4th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="5th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="6th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="7th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="8th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="9th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="10th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="12th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="13th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="14th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="15th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="16th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="17th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="18th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="19th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="20th">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="200.0" spacing="2.0">
+                           <children>
+                              <Label fx:id="lScoreOne" alignment="TOP_CENTER" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreTwo" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreThree" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreFour" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreFive" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreSix" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreSeven" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreEight" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreNine" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreTen" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreEleven" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreTwelve" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreThirteen" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreFourteen" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreFifteen" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreSixteen" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreSeventeen" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreEighteen" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreNinteen" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lScoreTwenty" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</FlowPane>
